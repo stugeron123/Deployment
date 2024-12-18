@@ -175,6 +175,12 @@ if (NOT FFMPEG_LIBRARIES)
     endif()
   endforeach ()
 
+find_library(${_component}_LIBRARY NAMES ${PC_${_component}_LIBRARIES} ${_library}
+      HINTS
+      ${PC_${_component}_LIBDIR}
+      ${PC_${_component}_LIBRARY_DIRS}
+      ${PC_FFMPEG_LIBRARY_DIRS}
+
   # Build the include path with duplicates removed.
   if (FFMPEG_INCLUDE_DIRS)
     list(REMOVE_DUPLICATES FFMPEG_INCLUDE_DIRS)
@@ -212,6 +218,11 @@ endforeach ()
 set(_FFmpeg_REQUIRED_VARS FFMPEG_LIBRARIES FFMPEG_INCLUDE_DIRS)
 foreach (_component ${FFmpeg_FIND_COMPONENTS})
   list(APPEND _FFmpeg_REQUIRED_VARS ${_component}_LIBRARIES ${_component}_INCLUDE_DIRS)
+endforeach ()
+
+# Now set the noncached _FOUND vars for the components.
+foreach (_component AVCODEC AVDEVICE AVFORMAT AVUTIL POSTPROCESS SWSCALE)
+  set_component_found(${_component})
 endforeach ()
 
 # Give a nice error message if some of the required vars are missing.
