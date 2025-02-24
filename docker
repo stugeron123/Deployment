@@ -39,8 +39,6 @@ steps:
       ACR_KEDA_IMAGE=$ACR_SERVER/public/oss/kedacore/keda:$VERSION_TAG
       ACR_KEDA_METRICS_APISERVER_IMAGE=$ACR_SERVER/public/oss/kedacore/keda-metrics-apiserver:$VERSION_TAG
 
-      docker pull $GHCR_KEDA_IMAGE
-      docker pull $GHCR_KEDA_METRICS_APISERVER_IMAGE
 
       docker push $ACR_KEDA_IMAGE
       docker push $ACR_KEDA_METRICS_APISERVER_IMAGE
