@@ -52,3 +52,6 @@ steps:
     env:
       ACR_USERNAME: $(ACR Username)
       ACR_PASSWORD: $(ACR Password)
+
+      docker push $ACR_KEDA_IMAGE
+      docker push $ACR_KEDA_METRICS_APISERVER_IMAGE
