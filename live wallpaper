@@ -96,14 +96,13 @@ macro(find_component _component _pkgconfig _library _header)
   if (PKG_CONFIG_FOUND)
     pkg_check_modules(PC_${_component} REQUIRED ${_pkgconfig})
   endif ()
-
   find_path(${_component}_INCLUDE_DIRS ${_header}
     HINTS
       ${PC_${_component}_INCLUDEDIR}
       ${PC_${_component}_INCLUDE_DIRS}
       ${PC_FFMPEG_INCLUDE_DIRS}
     PATH_SUFFIXES
-      ffmpeg
+      ffmpege
   )
 
   find_library(${_component}_LIBRARY NAMES ${PC_${_component}_LIBRARIES} ${_library}
@@ -184,7 +183,7 @@ find_library(${_component}_LIBRARY NAMES ${PC_${_component}_LIBRARIES} ${_librar
   # Build the include path with duplicates removed.
   if (FFMPEG_INCLUDE_DIRS)
     list(REMOVE_DUPLICATES FFMPEG_INCLUDE_DIRS)
-  endif ()
+  endif()
 
   # cache the vars.
   set(FFMPEG_INCLUDE_DIRS ${FFMPEG_INCLUDE_DIRS} CACHE STRING "The FFmpeg include directories." FORCE)
