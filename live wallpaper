@@ -226,6 +226,29 @@ endforeach ()
 
 # Give a nice error message if some of the required vars are missing.
 find_package_handle_standard_args(FFmpeg DEFAULT_MSG ${_FFmpeg_REQUIRED_VARS})
+# Check if the required components were found and add their stuff to the FFMPEG_* vars.
+  foreach (_component ${FFmpeg_FIND_COMPONENTS})
+    if (${_component}_FOUND)
+      message(STATUS "Libs: ${${_component}_LIBRARIES} | ${PC_${_component}_LIBRARIES}")
+
+      # message(STATUS "Required component ${_component} present.")
+      set(FFMPEG_LIBRARIES    ${FFMPEG_LIBRARIES}    ${${_component}_LIBRARY} ${${_component}_LIBRARIES})
+      set(FFMPEG_DEFINITIONS  ${FFMPEG_DEFINITIONS}  ${${_component}_DEFINITIONS})
+
+      list(APPEND FFMPEG_INCLUDE_DIRS ${${_component}_INCLUDE_DIRS})
+      list(APPEND FFMPEG_LIBRARY_DIRS ${${_component}_LIBRARY_DIRS})
+
+      string(TOLOWER ${_component} _lowerComponent)
+      if (NOT TARGET FFmpeg::${_lowerComponent})
+        add_library(FFmpeg::${_lowerComponent} INTERFACE IMPORTED)
+        set_target_properties(FFmpeg::${_lowerComponent} PROPERTIES
+            INTERFACE_COMPILE_OPTIONS "${${_component}_DEFINITIONS}"
+            INTERFACE_INCLUDE_DIRECTORIES ${${_component}_INCLUDE_DIRS}
+            INTERFACE_LINK_LIBRARIES "${${_component}_LIBRARY} ${${_component}_LIBRARIES} ${PC_${_component}_LIBRARIES}"
+            INTERFACE_LINK_DIRECTORIES "${PC_${_component}_LIBDIR} ${PC_${_component}_LIBRARY_DIRS} ${PC_FFMPEG_LIBRARY_DIRS}"
+            IMPORTED_LINK_INTERFACE_MULTIPLICITY 3)
+      endif()
+    else()
 
 if (NOT TARGET FFmpeg::FFmpeg)
   add_library(FFmpeg INTERFACE)
