@@ -13,7 +13,7 @@
         },
         "tagValues": {
             "defaultValue": {"Created with":"Synapse Azure Resource Manager deploment template"},
-            "type": "Object"
+            "type": "String"
         }
     },
     "resources": [
