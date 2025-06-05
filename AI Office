@@ -71,20 +71,6 @@
 			"scope": "javascript,typescript",
 		},
 
-		"Convex Action": {
-			"prefix": "convex:action",
-			"body": [
-				"import { action } from \"./_generated/server\";",
-				"",
-				"export const $1 = action({",
-				"  args: {},",
-				"  handler: async (ctx, args) => {",
-				"    $0",
-				"  },",
-				"});",
-			],
-			"scope": "javascript,typescript",
-		},
 
 		"Convex Internal Action": {
 			"prefix": "convex:internalAction",
