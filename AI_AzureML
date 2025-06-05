@@ -34,6 +34,16 @@
         "Application_Type": "web"
       }
     },
+  "variables": {
+    "azureMLSku": "basic",
+    "appInsights": "[resourceId('Microsoft.Insights/components', variables('appInsightsName'))]",
+    "appInsightsName": "[concat('appInsights-', parameters('uniqueKey'))]",
+    "keyVault": "[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName'))]",
+    "keyVaultName": "[concat('keyVault-', parameters('uniqueKey'))]",
+    "dataAccount": "[resourceId('Microsoft.Storage/storageAccounts', variables('dataAccountName'))]",
+    "dataAccountName": "[concat('storage', parameters('uniqueKey'))]",
+    "dataAccountType": "Standard_LRS"
+  },
     {
       "comments": "KeyVault for AzureML Workspace",
       "type": "Microsoft.KeyVault/vaults",
