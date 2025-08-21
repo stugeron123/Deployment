@@ -66,4 +66,14 @@
         }
     ],
     "outputs": {}
+     {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2018-05-01",
+            "name": "storage",
+            "properties": {
+              "mode": "Incremental",
+              "templateLink": {
+                "uri": "https://raw.githubusercontent.com/Azure-Samples/Synapse/master/Manage/DeployWorkspace/storage/azuredeploy.json",
+                "contentVersion": "1.0.0.0"
+              },
 }
