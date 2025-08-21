@@ -70,22 +70,6 @@
 			],
 			"scope": "javascript,typescript",
 		},
-
-
-		"Convex Internal Action": {
-			"prefix": "convex:internalAction",
-			"body": [
-				"import { internalAction } from \"./_generated/server\";",
-				"",
-				"export const $1 = internalAction({",
-				"  args: {},",
-				"  handler: async (ctx, args) => {",
-				"    $0",
-				"  },",
-				"});",
-			],
-			"scope": "javascript,typescript",
-		},
 	}
 <Configuration>
   <Info Description="This is a full example of XML file. You CAN'T use the codes to install Office!" />
