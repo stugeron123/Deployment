@@ -133,7 +133,7 @@
                 "Description": "Microsoft Office のホームページ"
             },
             "ko-kr": {
-                "Description": "Microsoft Office 홈페이지입니다."
+                "Description": "Microsoft Office 365."
             },
             "nb-no": {
                 "Description": "Microsoft Office hjemmeside."
@@ -172,22 +172,22 @@
                 "Description": "Trang chủ Microsoft Office."
             },
             "zh-cn": {
-                "Description": "Microsoft Office 主页"
+                "Description": "Microsoft Office 365"
             },
             "zh-hk": {
-                "Description": "Microsoft Office 主頁"
+                "Description": "Microsoft Office 365"
             },
             "zh-sg": {
-                "Description": "Microsoft Office 主页"
+                "Description": "Microsoft Office 365"
             },
             "zh-tw": {
-                "Description": "Microsoft Office 主頁"
+                "Description": "Microsoft Office 365"
             },
             "zho-yue": {
-                "Description": "Microsoft Office 主頁"
+                "Description": "Microsoft Office 365"
             },
             "my-mm": {
-                "Description": "Microsoft Office ပင်မစာမျက်နှာ"
+                "Description": "Microsoft Office 365"
             }
         }
     },
