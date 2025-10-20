@@ -154,18 +154,7 @@
             "envFile": ".env",
             "justMyCode": false
         },
-        {
-            "name": "Customer Assist Conversation Simulator: Run Service",
-            "request": "launch",
-            "type": "debugpy",
-            "cwd": "${workspaceFolder}/src/solution_accelerators/customer_assist/conversation_simulator",
-            "python": "${workspaceFolder}/src/solution_accelerators/customer_assist/conversation_simulator/.venv/Scripts/python.exe",
-            "program": "app.py",
-            "console": "integratedTerminal",
-            "justMyCode": false,
-            "envFile": ".env",
-            "preLaunchTask": "Conversation Simulator: Setup Environment"
-        },        {
+     {
             "name": "Customer Assist Evals: Launch",
             "type": "debugpy",
             "request": "launch",
