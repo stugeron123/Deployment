@@ -119,19 +119,6 @@
   <Property Name="DeviceBasedLicensing" Value="1" />
   <Property Name="PACKAGEGUID" Value="12345678-ABCD-1234-ABCD-1234567890AB" />
   <Updates Enabled="TRUE" UpdatePath="C:\Office" UpdateChannel="Broad" TargetVersion="16.0.11111.11111" DeadLine="12/31/9999 08:00" />
-  <RemoveMSI>
-    <IgnoreProduct ID="VisPro" />
-    <IgnoreProduct ID="VisProR" />
-    <IgnoreProduct ID="VisStd" />
-    <IgnoreProduct ID="VisStdR" />
-    <IgnoreProduct ID="PrjPro" />
-    <IgnoreProduct ID="PrjProR" />
-    <IgnoreProduct ID="PrjStd" />
-    <IgnoreProduct ID="PrjStdR" />
-    <IgnoreProduct ID="InfoPath" />
-    <IgnoreProduct ID="InfoPathR" />
-    <IgnoreProduct ID="SPD" />
-  </RemoveMSI>
   <AppSettings>
     <Setup Name="Company" Value="Yerong の小窝" />
     <!-- No App Preferences -->
