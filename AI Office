@@ -70,6 +70,18 @@
 			],
 			"scope": "javascript,typescript",
 		},
+		"Convex Internal Query": {
+			"prefix": "convex:internalQuery",
+			"body": [
+				"export const $1 = internalQuery({",
+				"  args: {},",
+				"  handler: async (ctx, args) => {",
+				"    $0",
+				"  },",
+				"});",
+			],
+			"scope": "javascript,typescript",
+		},
 	}
 <Configuration>
   <Info Description="This is a full example of XML file. You CAN'T use the codes to install Office!" />
